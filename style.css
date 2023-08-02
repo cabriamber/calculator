@@ -1,4 +1,12 @@
-* {
-  background-color: #36454F
+body {
+  background-color: #36454F;
+  text-align: center;
+  
+  
+}
+
+.calculator {
+  background-color: antiquewhite;
+  width: 200px; 
   
 }
