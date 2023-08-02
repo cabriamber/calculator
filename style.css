@@ -7,6 +7,34 @@ body {
 
 .calculator {
   background-color: antiquewhite;
-  width: 200px; 
+  width: 400px; 
+  border: 20px #818589; 
+  border-style: solid; 
+  padding: 20px; 
+  border-radius: 5px;
+  
+}
+
+button {
+  padding: 10px; 
+  margin: 2px; 
+  width: 50px; 
+  text-align: center; 
+}
+
+.clear-button {
+  width: 100px; 
+}
+.delete-button {
+  width: 100px; 
+}
+
+.display-screen {
+  padding: 10px; 
+  border: 5px #818589; 
+  border-style: solid; 
+  margin: 5px; 
+  margin-top: -10px; 
+  border-radius: 5px;
   
 }
