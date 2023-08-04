@@ -22,14 +22,26 @@ button {
   text-align: center; 
   height: 50px;
   font-size: 20px;
+  border-radius: 3px;
+  }
+
+  button:hover {
+    transform: scale(1.1); 
   }
 
 
 #clear-button {
   width: 148px; 
+  background-color: #FF8A8A;
+  
 }
 #delete-button {
   width: 148px; 
+  background-color: #8AC7DB;
+}
+
+#equals {
+  background-color: #8AFF8A
 }
 
 .display-screen {
