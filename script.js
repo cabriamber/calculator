@@ -35,15 +35,35 @@ const operate = function(aFirstNumber, aSecondNumber, anOperation) {
   else if (operation === "/") {
     solution = (aFirstNumber / aSecondNumber); 
   }
-  firstNumber = solution; 
-  displayScreen.textContent = solution; 
+  //firstNumber = solution; 
+  //displayScreen.textContent = solution; 
+  //secondNumber = ''; 
+  //operation = ''; 
+  //console.log(typeof(solution)); 
+  //console.log({firstNumber})
+  //console.log({secondNumber}); 
+  //console.log({operation}); 
+  reportResult(solution); 
+}
+
+function reportResult(number) {
+  console.log(number); 
+  console.log("Here I am"); 
+  let answer = ''; 
+  let numberString = number.toString(); 
+  if (numberString.includes('.')) {
+    answer = roundResult(number); 
+  }
+  else {
+    answer = number; 
+  }
+  firstNumber = answer; 
+  displayScreen.textContent = answer; 
   secondNumber = ''; 
   operation = ''; 
-  console.log(typeof(solution)); 
-  console.log({firstNumber})
-  console.log({secondNumber}); 
-  console.log({operation}); 
-}
+
+};
+
 
 
 const zero = document.getElementById("zero");
@@ -194,6 +214,10 @@ function clearAll(e) {
   secondNumber = ''; 
   operation = ''; 
   console.log({operation}); 
+};
+
+function roundResult(number) {
+  return Math.round(number * 10000) / 10000
 };
 
 
