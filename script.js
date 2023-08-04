@@ -18,8 +18,11 @@ const operate = function(aFirstNumber, aSecondNumber, anOperation) {
   aFirstNumber = Number(firstNumber); 
   aSecondNumber = Number(secondNumber); 
   anOperation = operation; 
-
-  if (operation === "+") {
+  if (operation === "/" && secondNumber === '0') {
+    alert("You can't divide by zero!")
+    clearAll(); 
+  }
+  else if (operation === "+") {
     solution = (aFirstNumber + aSecondNumber); 
 
   }
@@ -66,7 +69,7 @@ const deleteButton = document.getElementById("delete-button");
 
 const displayScreen = document.getElementById("display-screen"); 
 
-const decimal = document.getElementById("")
+const decimal = document.getElementById("decimal");
 
 divide.addEventListener("click", saveOperator);
 multiply.addEventListener("click", saveOperator); 
@@ -90,6 +93,25 @@ clearButton.addEventListener("click", clearAll);
 equals.addEventListener("click", operate);
 
 deleteButton.addEventListener("click", backspace); 
+
+decimal.addEventListener("click", createDecimal); 
+
+function createDecimal (e) {
+  console.log("i'm here"); 
+  if (decimalNumber === true) {
+    return; 
+  }
+  else if (displayScreen.textContent === firstNumber) {
+    firstNumber = firstNumber + '.';
+    displayScreen.textContent = firstNumber; 
+    
+  }
+  else if (displayScreen.textContent === secondNumber) {
+    secondNumber = secondNumber + '.'; 
+    displayScreen.textContent = secondNumber; 
+    
+  }
+}
 
 
 function backspace(e) {
@@ -148,6 +170,11 @@ function saveVariable (e) {
     secondNumber = secondNumber + e.target.innerHTML; 
     displayScreen.textContent = secondNumber; 
   }
+  /*else if (firstNumber && operation === '/' && secondNumber) {
+    alert("You can't divide by zero!")
+    clearAll(); 
+  }*/
+
 
   
 
