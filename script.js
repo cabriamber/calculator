@@ -98,20 +98,32 @@ decimal.addEventListener("click", createDecimal);
 
 function createDecimal (e) {
   console.log("i'm here"); 
-  if (decimalNumber === true) {
-    return; 
-  }
-  else if (displayScreen.textContent === firstNumber) {
+
+  let myNumberString = firstNumber.toString(); 
+  //console.log({myNumberString})
+
+  if (displayScreen.textContent === myNumberString) {
+    //console.log("yes")
+    if (myNumberString.includes('.')) {
+      return; 
+    }
+    else {
     firstNumber = firstNumber + '.';
     displayScreen.textContent = firstNumber; 
+    }
     
-  }
+    }
   else if (displayScreen.textContent === secondNumber) {
-    secondNumber = secondNumber + '.'; 
-    displayScreen.textContent = secondNumber; 
+    if (secondNumber.includes('.')) {
+      return; 
+    }
+    else {
+      secondNumber = secondNumber + '.'; 
+      displayScreen.textContent = secondNumber; 
     
+    }
   }
-}
+};
 
 
 function backspace(e) {
@@ -130,7 +142,7 @@ function backspace(e) {
     console.log({secondNumber}); 
   }
 
-}
+};
 
 
 function saveOperator (e) {
@@ -174,11 +186,7 @@ function saveVariable (e) {
     alert("You can't divide by zero!")
     clearAll(); 
   }*/
-
-
-  
-
-}
+};
 
 function clearAll(e) {
   displayScreen.textContent = ''; 
@@ -186,12 +194,19 @@ function clearAll(e) {
   secondNumber = ''; 
   operation = ''; 
   console.log({operation}); 
-}
+};
+
+
 
 
 /* Notes and such: 
 
+let myNumber = 8; 
+console.log(myNumber); 
+let myString = myNumber.toString();  
+console.log({myString}); 
 
+console.log(toString(8)); 
 
 
 
